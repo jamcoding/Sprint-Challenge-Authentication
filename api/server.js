@@ -15,4 +15,8 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
+server.use('/', (req, res) => {
+    res.send('<h2>Server is up</h2>');
+})
+
 module.exports = server;
